@@ -46,12 +46,12 @@ publishing {
 // artifactory configuration
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
 
     }
     dependencies {
         //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
     }
 }
 
@@ -62,7 +62,7 @@ allprojects {
 artifactory {
     publish {
         repository {
-            repoKey = 'gradle-dev-local'
+            repoKey = 'g-gradle-dev-local'
             maven = true
         }
         defaults {
@@ -73,7 +73,7 @@ artifactory {
     }
     resolve {
         repository {
-            repoKey = 'gradle-dev'
+            repoKey = 'g-gradle-dev'
             maven = true
 
         }
